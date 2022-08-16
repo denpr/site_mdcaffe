@@ -1,0 +1,52 @@
+
+.contacts_container {
+    /* display: flex;
+    padding: 10px;
+    background-color: aqua;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; */
+    display: grid;
+    gap: 1rem;
+    /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));280 размер iphone SE */
+    grid-template-areas: "a a a" "b c c" "b c c";
+    justify-items: center;
+    /* border: 1px solid rgb(0, 34, 255); */
+    /* отступы вокруг итемов */
+    /* padding: 1rem 1rem; */
+}
+.maps-container {
+    grid-area: a;
+    min-width: 280px;
+    min-height: auto;
+    /* border: solid 1px red; */
+    padding-top: 10px;
+}
+.maps {
+    /* position: absolute; */
+    padding-top: 10px;
+    bottom: 0;
+    height: 400px;
+    width: 1200px;
+    min-width: 280px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    
+}
+.form-container {
+    grid-area: b;
+    /* border: solid 1px green; */
+}
+.form-message {
+    padding: 10px;
+    /* background-color: bisque; */
+    border: 0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    font-family: inherit; /* 1 */
+    font-size: inherit; /* 1 */
+    line-height: inherit; /* 1 */
+    margin: 0; /* 2 */
+  }
+.btn-form {
+    padding: 10px;
+    margin: 10px;
+}

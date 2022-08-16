@@ -1,0 +1,86 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+<div class="inform__wrapper">
+    <div class="image-container" id="test">
+        <img src="" id="one">
+    </div>
+    <div class="inform_layer__container">
+        <!-- LEFT BLOCK -->
+        <div class="inform__one_block" id="first_block">
+            <div class="title_block">
+                {{ left_block.title }} 
+            </div>
+            <div class="table_block">
+                <table>
+                    {% for elem in left_block.content %}
+                        <tr>
+                            <td>{{ elem.title }}</td>
+                            <td class="weigth">{{ elem.weight }} гр.</td>
+                            <td>{{ elem.price_float }} BYN</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>       
+        </div>
+        <!-- CENTER BLOCK -->
+        <div class="inform__center_block" id="center_block">
+            <img class="center__img" src="{% static 'img/girl.png' %}" alt="">
+        </div>
+        <!-- RIGHT BLOCK -->
+        <div class="inform__one_block">
+            <div class="title_block">
+                {{ right_block.title }} 
+            </div>
+            <div class="table_block">
+                <table>
+                    {% for elem in right_block.content %}
+                        <tr>
+                            <td>{{ elem.title }}</td>
+                            <td class="weigth">{{ elem.weight }} гр.</td>
+                            <td>{{ elem.price_float }} BYN</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>       
+        </div>
+    </div>
+</div>
+{% if elements %}
+<hr>
+<div class="menu__container">
+    {% for categories, elem in elements.items %}
+            <h3 class="categories__title">{{ categories }}</h3>
+            <hr>
+            <div class="category__container">
+                {% for el in elem %}
+                <div class="item__container">
+                    <div class="menu__item">
+                        {% if el.cover.url|length > 3 %}
+                            <div class="img_1">
+                                <img class="img_1" src = "{{ el.cover.url }}" alt = "{{ el.title }}">
+                                <div class="title__container">
+                                    <div class="title__item">{{ el.title }}</div>
+                                    <div class="title__desc">{{ el.description }}</div>
+                                    <div class="title__price">{{ el.price_float }} BYN</div>
+                                </div>
+                                <div class="layer"></div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+    {% endfor %}
+</div>
+{% else %}
+    <p>Нет записей</p>
+{% endif %}
+
+{% endblock %}
