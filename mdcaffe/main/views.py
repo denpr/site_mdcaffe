@@ -37,9 +37,12 @@ def contacts(request):
         form = MessageForm(request.POST)
         if form.is_valid():
             form.save()
+
+
             return redirect('home')
         else:
             print('no valid form')
+            return render(request, "main/contacts.html", {'form':form}) 
             
     form = MessageForm()
     context = {'form': form}
