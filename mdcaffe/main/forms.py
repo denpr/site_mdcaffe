@@ -8,12 +8,12 @@ class MessageForm(ModelForm):
         fields = ['name', 'email', 'message']
         widgets = {
             'name' : TextInput( attrs={
-                'class': 'form-message',
+                'class': 'form-message form-input',
                 'name':'fde',
                 'placeholder': 'Введите имя'
             }),
             'email' : TextInput(attrs={
-                'class': 'form-message',
+                'class': 'form-message form-input',
                 'placeholder': 'Введите email',
                 'required' : 'True'
             }),

@@ -1,29 +1,16 @@
 
 .contacts_container {
-    /* display: flex;
-    padding: 10px;
-    background-color: aqua;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center; */
     display: grid;
     gap: 1rem;
-    /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));280 размер iphone SE */
-    grid-template-areas: "a a a" "b c c" "b c c";
     justify-items: center;
-    /* border: 1px solid rgb(0, 34, 255); */
-    /* отступы вокруг итемов */
-    /* padding: 1rem 1rem; */
 }
 .maps-container {
-    grid-area: a;
     min-width: 280px;
     min-height: auto;
-    /* border: solid 1px red; */
     padding-top: 10px;
+    width: 100%;
 }
 .maps {
-    /* position: absolute; */
     padding-top: 10px;
     bottom: 0;
     height: 400px;
@@ -33,20 +20,90 @@
     
 }
 .form-container {
-    grid-area: b;
-    /* border: solid 1px green; */
+    min-width: 280px;
+    width: 100%;
 }
+
+.form_wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    justify-items: center;
+    gap: 1rem;
+}
+
+.contacts_text_container {
+    position: relative;
+    text-align: left;
+    margin: 0 auto;
+    min-width: 280px;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 30px;
+}
+.contacts_text {
+    /* padding-left: 20px; */
+    /* margin: 0; */
+
+    font-family: 'Jura';
+    font-weight: 400;
+    font-size: 20px;
+    color: rgb(93, 93, 93);
+}
+.hr_contacts_text {
+    width: 90%;
+    align: left;
+}
+.form_c {
+    width: 100%;
+    /* background-color: aqua; */
+}
+
 .form-message {
-    padding: 10px;
-    /* background-color: bisque; */
+    /* padding: 10px; */
     border: 0;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
-    font-family: inherit; /* 1 */
-    font-size: inherit; /* 1 */
-    line-height: inherit; /* 1 */
-    margin: 0; /* 2 */
-  }
+    /* font-family: inherit; */
+    /* font-size: inherit;  */
+    /* line-height: inherit; 1 */
+    /* margin: 0; 2 */
+    resize: none;
+    width: 100%;
+    min-width: 280px;
+    font-family: 'Jura';
+    font-weight: 400;
+    font-size: 20px;
+}
+.form-input {
+    height: 40px;
+}
 .btn-form {
     padding: 10px;
-    margin: 10px;
+    /* margin: 10px; */
+    width: 100%;
+    background-color: rgb(0, 102, 156);
+    font-family: 'Jura';
+    font-weight: 400;
+    font-size: 30px;
+    color: rgb(246, 246, 246);
 }
+
+.submit {
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    /* margin-top: 38px; */
+    outline: 0;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .submit:active {
+    background-color: #06b;
+  }
+  
+  

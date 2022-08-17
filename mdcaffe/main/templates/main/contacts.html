@@ -11,21 +11,47 @@
 <hr>
 <div class="container1">
     <div class="contacts_container">
-        <div class="maps-container">
-            <div style="position:relative;overflow:hidden;"><a href="https://yandex.by/maps/org/moby_dick/89459532639/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Moby Dick</a><a href="https://yandex.by/maps/157/minsk/category/coffee_shop/35193114937/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Кофейня в Минске</a><a href="https://yandex.by/maps/157/minsk/category/restaurant/184106394/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Ресторан в Минске</a><iframe class="maps" src="https://yandex.by/map-widget/v1/-/CCURRPsy-A" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
-        </div>
         <div class="form-container">
-           <form method="post">
-                {% csrf_token %}
-                <br>
-                <table>
-                {{ form }}
-                </table>
-                <br>
-                <button type="submit" class="btn-form">Отправить</button> 
-            </form> 
+            <div class="categories__title">
+                Связаться с нами
+            </div>
+            <hr>
+            <div class="form_wrap">
+                <form class="fomr_c" method="post">
+                        {% csrf_token %}
+                        <br>
+                        <table class="fomr_c">
+                        {{ form }}
+                        </table>
+                        <br>
+                        <button type="submit" class="submit">Отправить</button> 
+                </form> 
+            
+                <div class="contacts_text_container">
+                    <div class="contacts_text">
+                        220034, г. Минск <br>
+                        ул. Захарова, д. 24<br>
+                    </div>
+                    <br>
+                    <hr class="hr_contacts_text">
+                    <br>
+                    <div class="contacts_text">
+                        тел. +375665544322<br>
+                        тел. +375647347232
+                    </div>
+                </div>
+            </div>
         </div>
-        
+
+        <div class="maps-container">
+            <div class="categories__title">
+                Мы на карте
+            </div>
+            <hr>
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0da4ed356b8825c26d955b3010c86d5fe22de8ee4e60ef8024426daccfd9aefe&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>
+        </div>
+
+
     </div>
 </div>
 {% endblock %}
