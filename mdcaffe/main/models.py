@@ -1,3 +1,4 @@
+from weakref import proxy
 from django.db import models
 from datetime import datetime, timedelta
 
@@ -27,12 +28,21 @@ class MenuItem(models.Model):
     class Meta:
         verbose_name = 'Меню - Позиция'
         verbose_name_plural = 'Меню - Позиции'
+    
+    def get_cover(self):
+        try:
+            return mark_safe(f'<img src={self.cover.url} width="100"')
+        except:
+            return ""
+    get_cover.short_description = "Изображение"
 
 class IncomingMessage(models.Model):
     name = models.CharField('Name',max_length=12)
+    phone = models.CharField('Phone', max_length=12, blank=False)
     email = models.EmailField('Email', max_length=200, blank=False)
     created = models.DateTimeField('Дата создания',auto_now_add=True)
     message = models.TextField('Введите сообщение',blank=False)
+    answered = models.BooleanField('Отвечено', default=False)
     def __str__(self):
         d_delta = self.created + timedelta(hours=3)
         d = d_delta.strftime('%Y-%M-%d %H:%M')
@@ -67,5 +77,6 @@ class InformBlockMenuContent(models.Model):
         return f'{self.informCategory} - {self.position} - {self.title}'
 
     class Meta:
+        ordering = ("informCategory", "title", "weight", "price_float", "position")
         verbose_name = 'Информ. Контент меню'
         verbose_name_plural = 'Информ. Контент меню'

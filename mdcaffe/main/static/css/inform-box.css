@@ -126,5 +126,12 @@
     .table_block {
         font-size: 17px;
     }
-
+}
+@media screen and (max-width: 490px) {
+    .table_block {
+        font-size: 12px;
+    }
+    .weigth {
+        font-size: 12px;
+    }
 }

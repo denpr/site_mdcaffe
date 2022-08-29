@@ -1,7 +1,10 @@
 const center_img = document.querySelector('.inform__center_block');
 const inf_container = document.querySelector('.inform_layer__container')
 const first_block = document.querySelector('#first_block')
+const second_block = document.querySelector('#second_block')
 var center_show = true
+var second_block_show = true
+let second_block_remove_width = 580
 
 if (document.documentElement.clientWidth < 1000) {
     center_img.remove()
@@ -9,16 +12,31 @@ if (document.documentElement.clientWidth < 1000) {
 } else {
     center_show = true
 }
+if (document.documentElement.clientWidth < second_block_remove_width) {
+  second_block.remove()
+  second_block_show = false
+} else {
+  second_block_show = true
+}
 
-window.onresize = start;
-function start(){
+
+
+window.onresize = check_width;
+function check_width(){
     if (document.documentElement.clientWidth < 1000 && center_show == true) {
         center_img.remove()
         center_show = false
     } else if (document.documentElement.clientWidth > 1000 && center_show == false){
         first_block.after(center_img)
         center_show = true
-    }
+    } 
+    if (document.documentElement.clientWidth < second_block_remove_width && second_block_show == true) {
+        second_block.remove()
+        second_block_show = false
+    } else if (document.documentElement.clientWidth > second_block_remove_width && second_block_show == false){
+      first_block.after(second_block)
+      second_block_show = true
+    } 
 }
 
 initImg('#test img', [

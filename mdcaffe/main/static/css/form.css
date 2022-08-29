@@ -76,6 +76,9 @@
 .form-input {
     height: 40px;
 }
+.form-textarea {
+    height: 100px;
+}
 .btn-form {
     padding: 10px;
     /* margin: 10px; */
