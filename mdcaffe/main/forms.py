@@ -11,21 +11,21 @@ class MessageForm(ModelForm):
             'name' : TextInput( attrs={
                 'class': 'form-message form-input',
                 'name':'fde',
-                'placeholder': 'Введите имя'
+                'placeholder': 'Имя'
             }),
             'phone' : TextInput(attrs={
                 'class': 'form-message form-input',
-                'placeholder': 'Введите телефон',
+                'placeholder': 'Tелефон',
                 'required' : 'True'
             }),
             'email' : TextInput(attrs={
                 'class': 'form-message form-input',
-                'placeholder': 'Введите email',
+                'placeholder': 'email',
                 'required' : 'True'
             }),
             'message' : Textarea(attrs={
                 'class': 'form-message form-textarea',
-                'placeholder': 'Введите сообщение'
+                'placeholder': 'Сообщение'
             }) 
         }
         labels = {
