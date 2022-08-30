@@ -17,3 +17,4 @@ tests/.coverage
 build/
 tests/report/
 /mdcaffe/mdcaffe/config_secrets.py
+/mdcaffe/mdcaffe/settings.py
